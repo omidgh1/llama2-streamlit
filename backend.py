@@ -51,7 +51,7 @@ def generate_llama2_response(prompt_input,selected_model):
             string_dialogue += "User: " + dict_message["content"] + "\n\n"
         else:
             string_dialogue += "Assistant: " + dict_message["content"] + "\n\n"
-    output = replicate.run(selected_model, # 
+    output = replicate.run(llm, # 
                            input={"prompt": f"{string_dialogue} {prompt_input} Assistant: ",
                                   "temperature":temperature, "top_p":top_p, "max_length":max_length, "repetition_penalty":1})
     return output
@@ -66,7 +66,7 @@ if prompt := st.chat_input(disabled=not replicate_api):
 if st.session_state.messages[-1]["role"] != "assistant":
     with st.chat_message("assistant"):
         with st.spinner("Thinking..."):
-            response = generate_llama2_response(prompt,selected_model)
+            response = generate_llama2_response(prompt,llm)
             placeholder = st.empty()
             full_response = ''
             for item in response:
