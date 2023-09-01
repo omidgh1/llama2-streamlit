@@ -1,6 +1,7 @@
 import streamlit as st
 import replicate
 import os
+import time
 
 # App title
 st.set_page_config(page_title="Llama 2 Chatbot - Nexum-AI")
@@ -54,6 +55,7 @@ def generate_llama2_response(prompt_input,selected_model):
     output = replicate.run(llm, # 
                            input={"prompt": f"{string_dialogue} {prompt_input} Assistant: ",
                                   "temperature":temperature, "top_p":top_p, "max_length":max_length, "repetition_penalty":1})
+    time.sleep(2)
     return output
 
 # User-provided prompt
