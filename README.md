@@ -16,3 +16,31 @@ Llama 2 Chatbot is a dynamic and customizable chatbot application powered by Nex
    git clone https://github.com/yourusername/llama2-chatbot.git
    cd llama2-chatbot
    ```
+2. Install the required packages:
+```bash
+pip install -r requirements.txt
+```
+3. Set up your Replicate API token:
+
+Add your REPLICATE_API_TOKEN to your Streamlit secrets or input it manually in the sidebar when running the app.
+
+## Usage
+1. Run the Streamlit app:
+
+```bash
+streamlit run app.py
+```
+2. Open your web browser and navigate to the provided local URL.
+
+3. Interact with the chatbot by entering your prompt in the chat input.
+
+## Configuration
+- **Select Model:** Choose between Llama2-7B, Llama2-13B, and Llama2-70B from the sidebar.
+- **Adjust Parameters:** Use the sidebar sliders to modify temperature, top_p, and max_length.
+
+## Contributing
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## Acknowledgements
+Streamlit
+Replicate
